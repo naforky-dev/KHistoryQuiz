@@ -1,0 +1,28 @@
+## KHistoryQuiz configuration
+
+# question-set: control loading of `questions.yml`
+# - default : use only the built-in default question set
+# - custom  : load questions from questions.yml only
+# - extend  : load questions from questions.yml and also include the built-in default set
+
+# interval: seconds between displayed questions
+# integer between 0 and 1800 (0 means immediate / no delay)
+
+# Notes:
+# - Invalid config values will cause the plugin to revert to defaults and notify ops in chat.
+# - Edit questions.yml to add custom questions (format in questions.yml).
+
+# Interval between quiz rounds (seconds)
+interval: 300
+
+# Total time to answer before death (seconds)
+answer-countdown: 15
+
+# When to show the hint (seconds remaining)
+countdown-hint: 8
+
+# Options: default, custom, extend
+question-set: extend
+
+# IDs to skip from questions.yml
+excluded-questions: []

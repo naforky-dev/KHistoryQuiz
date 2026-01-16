@@ -1,0 +1,14 @@
+## Editable questions file for KHistoryQuiz
+## Format (example):
+## questions:
+##   1:
+##     question: "대한민국의 건국 연도는?"
+##     answer: "1948"
+##   2:
+##     question: "한글을 창제한 왕은 누구인가요?"
+##     answer: "세종대왕"
+
+questions:
+  1:
+    question: "샘플 질문: 대한민국의 건국 연도는?"
+    answer: "1948"

@@ -1,0 +1,12 @@
+name: KHistoryQuiz
+main: io.codejava.mc.khistory.KHistoryQuiz
+version: 1.0
+api-version: "1.21"
+description: "일정 시간마다 한국사 문제를 표시하는 플러그인"
+author: "naforky-dev"
+commands:
+  historyquiz:
+    description: "문제 표시 타이머 시작"
+    usage: "/khistoryquiz start"
+    permission: khistoryquiz.op
+    permission-message: "권한이 없습니다. (khistoryquiz.op 필요)"
