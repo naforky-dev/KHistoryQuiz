@@ -23,11 +23,14 @@ Java 25 `temurin`(Oracle의 [최신 Java](https://www.oracle.com/java/technologi
 `/khistoryquiz <command>`
 
 `<command>`:
-  - `whitelist` - 화이트리스트 설정
+  - `start` - 문제 디스플레이 타이머를 시작
+  - `pause` - 타이머 일시정지
+  - `stop`, `reset` - 타이머 정지, 문제 카운터와 점수, 죽은 횟수 등 리셋
+  - `loaddefaults` - `config.yml`을 무시하고 기본 설정을 불러오기 (`questions.yml`은 일반적으로 로드됩니다)
 
-`config.yml` - `/plugins/NotSpectator` 경로에 생성 가능한 설정 파일(서버 새로고침, 재시작 시 설정 리셋 방지)
+`config.yml` - `/plugins/KHistoryQuiz` 경로에 생성 가능한 설정 파일(서버 새로고침, 재시작 시 설정 리셋 방지)
 
-`questions.yml` - `/plugins/NotSpectator` 경로에 생성 가능한 문제 세트 파일(기본 문제 세트 외 다른 문제 추가)
+`questions.yml` - `/plugins/KHistoryQuiz` 경로에 생성 가능한 문제 세트 파일(기본 문제 세트 외 다른 문제 추가)
 
 ### 설정 파일
 >[!NOTE]
@@ -36,15 +39,16 @@ Java 25 `temurin`(Oracle의 [최신 Java](https://www.oracle.com/java/technologi
 
 
 ```yml
-# NotSpectator 플러그인 설정
-# 화이트리스트에 관전 현황을 숨길 플레이어 추가(소문자)
-# 게임 내에서 수정하려면 /notspectator whitelist 사용.
-whitelist:
-  - "naforky"
+# KHistoryQuiz 플러그인 설정
+# question-set-filter: questions.yml의 문제들 중 특정 범위 또는 특정 문제들을 제외합니다.
+# 예시: (문제들의 번호를 사용, 필터링을 하지 않는 경우 값을 none으로 입력)
+question-set-filter: [1, 6, 9]
 
-# '/gamemode spectator' 사용 시 출력되는 메시지를 숨기려면 false로 설정
-# 게임룰(gamerule) 'sendCommandFeedback'를 변경.
-show-gamemode-messages: true
+
+# interval: 게임 내에서 플러그인을 시작한 경우 문제가 나오는 시간 간격을 변경
+# 'random' 또는 ms 단위의 시간 단위로 입력, random일 경우 플러그인이 4분(240000)마다 문제를 표시합니다.
+# 1초 = 1000ms(밀리초)
+interval: 240000
 ```
 
 ### 기본 옵션
@@ -52,8 +56,8 @@ show-gamemode-messages: true
 >아래의 설정은 위의 `config.yml` 파일이 없거나 잘못 작성된 경우
 >플러그인이 기본적으로 로드하는 설정입니다.
 ```yml
-whitelist: # 없음
-show-gamemode-messages: true
+question-set-filter: none
+interval: 240000
 ```
 
 ---
