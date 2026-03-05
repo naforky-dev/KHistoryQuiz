@@ -7,3 +7,7 @@ question-set-filter: none
 # 'random' 또는 ms 단위의 시간 단위로 입력, random일 경우 플러그인이 4분(240000)마다 문제를 표시합니다.
 # 1초 = 1000ms(밀리초)
 interval: 240000
+
+# question-timeout: 각 문제가 표시되는 시간을 초 단위로 설정합니다.
+# 기본값: 10초
+question-timeout: 10
